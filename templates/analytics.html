@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics</title>
+</head>
+<body>
+<img src="{{ url_for('static', filename='attendance_chart.png') }}" width="700">
+<h2>Attendance Analytics</h2>
+
+<table border="1">
+    <tr>
+        <th>Student</th>
+        <th>Attendance Count</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row["_id"] }}</td>
+        <td>{{ row["count"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+
+<a href="/dashboard">
+    <button>Back</button>
+</a>
+
+<a href="/analytics" class="btn btn-dark">
+    Analytics
+</a>
+
+</body>
+</html>
